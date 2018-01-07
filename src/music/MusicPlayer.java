@@ -7,11 +7,7 @@ import java.io.*;
 import java.applet.Applet;
 import java.net.MalformedURLException;
 import java.net.URL;
-/**
- * 音乐控制
- * Create by Meng
- *
- */
+
 public class MusicPlayer {
 
     static volatile boolean running =false;

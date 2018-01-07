@@ -6,7 +6,6 @@ import java.awt.event.KeyEvent;
 import music.MusicPlayer;
 /**
  * 按键控制器，响应按键操作
- * Create by Zhou
  */
 public class KeyController extends KeyAdapter{
 
