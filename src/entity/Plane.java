@@ -30,12 +30,10 @@ public abstract class Plane extends BaseObject{
     }
 
     public void hit() { // 飞机被击中之后的反应
-        if(life==1){ // 那就没有生命值了
+        if(life==1){ // 那说明这次被击就要爆炸
             state=ConstantUtil.PlaneState.exploding;
         }
-        else { // 生命值减一
-            life--;
-        }
+        life--;
 
     }
     public void Draw(Graphics g) {
@@ -51,7 +49,6 @@ public abstract class Plane extends BaseObject{
                 g.drawImage(im1, x, y, w, h, null);
                 count++;
                 if(count==20) {
-                    life = 0;
                     state = ConstantUtil.PlaneState.dead;
                 }
         }

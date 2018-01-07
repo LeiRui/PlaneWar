@@ -154,8 +154,15 @@ public class AController extends Controller{
                 Plane ep=panel.EnemyPlanes.get(j);
                 if(ep.isValid() && ep.GetRectangle().intersects(rec)) {
                     ep.hit(); //被击中
-                    if(panel.A.isValid()) //判断A还没死，A的子弹才加分
-                        panel.AScore++;
+                    if(panel.A.isValid()) {
+                        if (ep.type == ConstantUtil.PlaneType.GeneralStrongEnemy) {
+                            if (ep.life == 0) {
+                                panel.AScore += 3; // 加强飞机击杀的最后一下得3分
+                            }
+                        } else {
+                            panel.AScore++; // 普通敌机和自杀敌机击败得一分
+                        }
+                    }
                     b.valid=false; // 子弹失效
                     break;
                 }
@@ -171,8 +178,15 @@ public class AController extends Controller{
                 Plane ep=panel.EnemyPlanes.get(j);
                 if(ep.isValid() && ep.GetRectangle().intersects(rec)) {
                     ep.hit(); //被击中
-                    if(panel.B.isValid()) //判断A还没死，A的子弹才加分
-                        panel.BScore++;
+                    if(panel.B.isValid()) {
+                        if (ep.type == ConstantUtil.PlaneType.GeneralStrongEnemy) {
+                            if (ep.life == 0) {
+                                panel.BScore += 3; // 加强飞机击杀的最后一下得3分
+                            }
+                        } else {
+                            panel.BScore++; // 普通敌机和自杀敌机击败得一分
+                        }
+                    }
                     b.valid=false; // 子弹失效
                     break;
                 }
