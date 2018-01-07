@@ -116,7 +116,7 @@ public class AController extends Controller{
         }
     }
 
-    public void GameStateUpdate() { // 更新游戏状态，包括碰撞检测处理
+    public void GameStateUpdate() { // 更新游戏状态:移动物体，并进行游戏逻辑事件监测和处理，包括碰撞检测处理
         panel.bg.move();
 
         for(int i=0; i<panel.ABullets.size();i++){
@@ -228,13 +228,21 @@ public class AController extends Controller{
             }
         }
 
-        if(!panel.A.isValid() && !panel.B.isValid()) {
+        if(!panel.A.isValid() && !panel.B.isValid()) { // 游戏结束case1:两个玩家都被打败
             long tmp=System.currentTimeMillis();
             panel.timeused=tmp-panel.timeused; // 计时
             System.out.print("gameover");
 
             isRunning=false;
+            panel.isGameOver=true;
+        }
 
+        if(panel.AScore+panel.BScore > ConstantUtil.WinThreshold){// 游戏结束case2：两个玩家加起来得分得到阈值
+            long tmp=System.currentTimeMillis();
+            panel.timeused=tmp-panel.timeused; // 计时
+            System.out.print("gameover");
+
+            isRunning=false;
             panel.isGameOver=true;
         }
 

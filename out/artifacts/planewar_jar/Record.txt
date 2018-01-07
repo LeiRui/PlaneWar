@@ -1,4 +1,4 @@
-Name,1,Score,0,Time,9.0
-Name,2,Score,0,Time,9.0
-Name,1,Score,0,Time,9.0
-Name,2,Score,0,Time,9.0
+Name,lei,Score,2,Time,30.0
+Name,lei,Score,2,Time,30.0
+Name,rui,Score,0,Time,30.0
+Name,rui,Score,0,Time,30.0

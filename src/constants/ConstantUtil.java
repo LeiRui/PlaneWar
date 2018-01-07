@@ -51,4 +51,6 @@ public class ConstantUtil {
     public static String ImgExplodeURL="Resources/Graphics/explode/explode.png";
 
     public static String ScoreRecordPath="."+ File.separator+"Record.txt";
+
+    public static int WinThreshold = 10;
 }
